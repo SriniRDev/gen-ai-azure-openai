@@ -1,0 +1,7 @@
+#openai
+#ipykernel
+#numpy
+#azure-identity
+dotenv
+openai-agents==0.0.12 
+mcp[cli]>=1.6.0

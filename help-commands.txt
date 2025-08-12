@@ -1,0 +1,19 @@
+sudo keytool -importcert -trustcacerts -alias <alias-name> -file /path/to/cert/file.pem -keystore cacerts
+pyenv local 3.10.18
+python3 -m virtualenv ~/.virtualenv/gen-ai-az-openai
+source ~/.virtualenv/gen-ai-az-openai/bin/activate
+python3 -m  ipykernel install --user --name gen-ai-az-openai --display-name gen-ai-az-openai
+select normal python required version interpreter. This will ask for install of jypyter in the virtualenv
+Restart VSCode
+
+
+### Proxy 
+cat <<EOF >> /path/in/virtual/environment/site-packages/certifi/cacert.pem
+-----BEGIN CERTIFICATE-----
+DUMMY_CERTIFICATE_TEXT
+-----END CERTIFICATE-----
+EOF
+
+### To make VSCode intellisense work in virtualenv.
+1. Open command pallette ( Cmd+Shift+P)
+2. select "Python: Clear Cache and Reload Window"
